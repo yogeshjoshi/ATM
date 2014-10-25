@@ -1,3 +1,4 @@
+
 int change_amount(int*amount,int note){
 	*amount= *amount%note;
 	return 1;
@@ -8,7 +9,9 @@ int validateAmount(float amount){
 	}
 	return 1;
 }
-int NumberOfNote(int* amount,int* fiveHundred, int* hundred, int* fifty, int* twenty, int* ten){
+int NumberOfNote(int* amount,int* thousand ,int* fiveHundred, int* hundred, int* fifty, int* twenty, int* ten){
+	*thousand = *amount/1000;
+	change_amount(amount,1000);
 	*fiveHundred = *amount/500;
 	change_amount(amount,500);
 	*hundred = *amount/100;
